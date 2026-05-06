@@ -16,6 +16,8 @@ public class Reservation {
     }
 
     public String getRoomType() {
+        Room room = new Room();
+        roomType = room.getSize();
         return roomType;
     }
 
@@ -24,7 +26,13 @@ public class Reservation {
     }
 
     public int getPrice() {
-        return price;
+        if (size.equals("king")) {
+            this.price = 139;
+        } else if (size.equals("twin")){
+            this.price = 124;
+        } else {
+            this.price = 2;
+        }
     }
 
     public void setPrice(int price) {
