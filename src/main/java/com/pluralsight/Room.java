@@ -7,6 +7,18 @@ public class Room {
     private boolean dirty;
     private boolean available;
 
+    public Room() {
+
+    }
+
+    public Room(String size, double price, boolean occupied, boolean dirty, boolean available) {
+        this.size = size;
+        this.price = price;
+        this.occupied = occupied;
+        this.dirty = dirty;
+        this.available = available;
+    }
+
     public String getSize() {
         return size;
     }
@@ -27,14 +39,12 @@ public class Room {
         return occupied;
     }
 
-    public void
-
     public boolean isDirty() {
         return dirty;
     }
 
     public boolean isAvailable() {
-        return isOccupied() && !isDirty();
+        return !isOccupied() && !isDirty();
     }
 
 

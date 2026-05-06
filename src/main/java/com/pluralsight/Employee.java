@@ -43,14 +43,21 @@ public class Employee {
     }
 
     public double getTotalPay() {
-        return payRate * hoursWorked;
+        double totalPay = 0;
+        if (hoursWorked <= 40) {
+            totalPay = payRate * hoursWorked;
+        } else if (hoursWorked > 40) {
+            totalPay = (payRate * 40) + (payRate * (hoursWorked - 40) * 1.5);
+        }
+        return totalPay;
     }
 
-    public double getRegularHours() {
+    public void setTotalPay(double payRate) {
+        this.payRate = payRate;
+    }
+
+    public double getHoursWorked() {
         return hoursWorked;
     }
 
-    public double getOvertimeHours() {
-        return (hoursWorked - 40);
-    }
 }
